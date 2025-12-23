@@ -605,11 +605,11 @@ object KyuubiConf {
       .version("1.4.0")
       .fallbackConf(FRONTEND_MAX_MESSAGE_SIZE)
 
-  val FRONTEND_THRIFT_CLIENT_MAX_MESSAGE_SIZE: ConfigEntry[Int] =
+  val FRONTEND_THRIFT_CLIENT_MAX_MESSAGE_SIZE: ConfigEntry[Long] =
     buildConf("kyuubi.frontend.thrift.client.max.message.size")
       .doc("Maximum message size in bytes a thrift client will receive.")
       .version("1.9.3")
-      .intConf
+      .longConf
       .createWithDefault(1 * 1024 * 1024 * 1024) // follow HIVE-26633 to use 1g as default value
 
   val FRONTEND_THRIFT_HTTP_REQUEST_HEADER_SIZE: ConfigEntry[Int] =
